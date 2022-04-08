@@ -53,7 +53,7 @@ export default function Login({ navigation }) {
 
 
           {nameShow ? <Text style={LoginStyle.error}>Enter Valid email</Text> : null}
-          <TextInput placeholder='Enter password' onChangeText={(value) => setPass(value)} style={LoginStyle.textInput} />
+         
 
           {passShow ? <Text>Enter Strong Password</Text> : null}
 

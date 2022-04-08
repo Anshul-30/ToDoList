@@ -5,6 +5,7 @@ const TextInputComponent = ({
   
     placeholder = '',
     placeholderTextColor = '',
+    onChangeText=''
     
 }) => {
     return (
@@ -16,7 +17,7 @@ const TextInputComponent = ({
                    
 
                     <View>
-                        <TextInput placeholder={placeholder} placeholderTextColor={placeholderTextColor} keyboardType="numeric"/>
+                        <TextInput placeholder={placeholder} placeholderTextColor={placeholderTextColor} onChangeText={onChangeText}/>
                     </View>
 
                     
@@ -35,7 +36,8 @@ const style = StyleSheet.create({
         marginHorizontal: 20,
         padding:10,
         borderRadius:5,
-        borderWidth:1
+        borderWidth:1,
+        marginVertical:10
     },
     img: {
         height: 20,
