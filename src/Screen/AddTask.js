@@ -4,16 +4,15 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import PhoneInput from "react-native-phone-number-input";
 import AddStyle from '../styles/AddTask';
 import navigationStrings from '../navigation/navigationString'
-
+import TextInputComponent from '../Components/TextInput';
 export default function AddTask({ navigation }) {
   return (<SafeAreaView>
     <View style={AddStyle.view}>
-      <Text style={AddStyle.text}>Fill Details</Text>
-      <TextInput placeholder='Enter Name' style={AddStyle.textinput} />
-      <TextInput placeholder='Enter Age' style={AddStyle.textinput} />
-      <TextInput placeholder='Enter RollNo' style={AddStyle.textinput} />
-      <TextInput placeholder='Enter Address' style={AddStyle.textinput} />
-      <TextInput placeholder='Enter Phone Number' style={AddStyle.textinput} />
+      <TextInputComponent/>
+      <TextInputComponent/>
+      <TextInputComponent/>
+      <TextInputComponent/>
+
       <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate(navigationStrings.HOME)}>
         <View style={AddStyle.submitview}>
           <Text style={AddStyle.submit}> Submit</Text>
