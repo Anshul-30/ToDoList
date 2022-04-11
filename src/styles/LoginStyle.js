@@ -32,7 +32,8 @@ const LoginStyle = StyleSheet.create({
 
     } ,
     error:{
-        color:'red'
+        color:'red',
+        marginLeft:10
     }    
 })
 export default LoginStyle

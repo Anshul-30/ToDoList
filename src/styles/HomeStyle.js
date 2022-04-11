@@ -30,13 +30,14 @@ const HomeStyle = StyleSheet.create({
     },
     logouttext: {
         color: 'tomato',
-        fontSize: 20,
+        fontSize: 17,
         fontWeight: '600',
         margin: 15
     },
     logout:{
         flex:1,
         flexDirection:'row',
+        // margin:10,
         justifyContent:'space-between'
     }
 })

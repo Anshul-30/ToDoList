@@ -13,3 +13,13 @@ export const Logout = () => {
         type:type.LOGOUT
     }
 }
+
+export const  DataInput = (data) =>{
+    return{
+        type:type.User_Data,
+        payload:{
+            id:Math.random,
+            data:data
+        }
+    }
+}
