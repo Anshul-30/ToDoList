@@ -28,7 +28,7 @@ export default function Home({ navigation }) {
         list.map((element) => {
           return (
             <>
-              <View key={element.id} style={{ flexDirection: 'row' ,borderWidth:1,borderRadius:5,justifyContent:'space-between',
+              <View  style={{ shadowOpacity:.5,shadowOffset:{height:2,width:-2},elevation:7,backgroundColor:'white',flexDirection: 'row',borderRadius:5,justifyContent:'space-between',
             margin:7}}>
                 <View style={{margin:10}}>
                   <Text style={HomeStyle.text1}>Name : {element.name}
@@ -42,10 +42,15 @@ export default function Home({ navigation }) {
                   <Text style={HomeStyle.text1}>Address : {element.address}
                   </Text>
                 </View>
+                  <View style={{flexDirection:'column',justifyContent:'space-between'}}>
 
                 <TouchableOpacity style={{margin:10}} onPress={() => dispatch(DeleteData(element.id))}>
-                  <Image source={images.delete} style={HomeStyle.img} />
+                  <Image source={images.delete1} style={{height:35,width:35}} />
                 </TouchableOpacity>
+                <TouchableOpacity style={{margin:10}} >
+                  <Image source={images.edit} style={{height:30,width:30}} />
+                </TouchableOpacity>
+                  </View>
               </View>
 
             </>
@@ -64,7 +69,7 @@ export default function Home({ navigation }) {
     </View>
 
 
-
+/* </SafeAreaView> */
 
 
 

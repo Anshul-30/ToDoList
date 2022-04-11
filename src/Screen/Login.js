@@ -12,25 +12,31 @@ export default function Login({ navigation }) {
   const [email, setEmail] = useState('')
   const [nameShow, setNameShow] = useState(false)
   const [passShow, setPassShow] = useState(false)
-
+  const [emailError, setEmailError] = useState(false)
   const emailRegex = /^[\w-\.\_\$]+@([\w]{3,5}\.)[\w]{2,4}$/;
   const strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%\^&\*])(?=.{8,})");
 
   const click = () => {
-    if (emailRegex.test(email)) {
-      setNameShow(false)
-      if (strongRegex.test(pass)) {
-        setPassShow(false)
-        dispatch(Login1())
+    if (email != 0) {
+      setEmailError(false)
+      if (emailRegex.test(email)) {
+        setNameShow(false)
+        if (strongRegex.test(pass)) {
+          setPassShow(false)
+          dispatch(Login1())
 
-      }
-      else {
-        setPassShow(true)
+        }
+        else {
+          setPassShow(true)
 
+        }
       }
+      else
+        setNameShow(true)
     }
-    else
-      setNameShow(true)
+    else {
+      setEmailError(true)
+    }
   }
   return (
     <>
@@ -43,7 +49,7 @@ export default function Login({ navigation }) {
             onChangeText={(value) => setEmail(value)} />
 
           {nameShow ? <Text style={LoginStyle.error}>Enter Valid email</Text> : null}
-
+          {emailError ? <Text style={LoginStyle.error}>Email can not be empty </Text> : null}
 
           <TextInputComponent
             placeholder={'Enter Password'}
@@ -52,7 +58,7 @@ export default function Login({ navigation }) {
           />
 
 
-          {passShow ? <Text>Enter Strong Password</Text> : null}
+          {passShow ? <Text style={LoginStyle.error}>Enter Strong Password</Text> : null}
 
           <TouchableOpacity onPress={click}>
             <View style={LoginStyle.btn}>

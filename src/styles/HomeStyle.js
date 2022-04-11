@@ -42,7 +42,9 @@ const HomeStyle = StyleSheet.create({
         justifyContent:'space-between'
     },
     text1:{
-        padding:3,fontSize:16
+        padding:3,
+        color:'black',
+        fontSize:16
     }
 })
 export default HomeStyle
