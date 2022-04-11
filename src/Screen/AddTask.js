@@ -58,27 +58,45 @@ const dispatch = useDispatch()
     else
       setNameError(true)
   }
-  return (<SafeAreaView>
+
+
+  return (
+  <SafeAreaView>
     <View style={AddStyle.view}>
       <Text style={AddStyle.text}>Fill details</Text>
-      <TextInputComponent placeholder='Enter Name' onChangeText={(value) => setName(value)} />
+      <TextInputComponent  
+      placeholder='Enter Name'  
+      onChangeText={(value) => setName(value)} />
+
       {
         nameError ? <Text style={LoginStyle.error}>Enter Name</Text> : null
       }
-      <TextInputComponent placeholder='Enter Age' onChangeText={(value) => setAge(value)} />
+      <TextInputComponent 
+      placeholder='Enter Age' 
+      onChangeText={(value) => setAge(value)} />
+
       {
         ageError ? <Text style={LoginStyle.error}>Enter Age</Text> : null
       }
-      <TextInputComponent placeholder='Enter RollNo' onChangeText={(value) => setRollno(value)} />
+      <TextInputComponent 
+      placeholder='Enter RollNo' 
+      onChangeText={(value) => setRollno(value)} />
+
       {
         rollnoError ? <Text style={LoginStyle.error}>Enter Rollno </Text> : null
       }
-      <TextInputComponent placeholder='Enter Phone Number' onChangeText={(value) => setPhoneNumber(value)} />
+      <TextInputComponent 
+      placeholder='Enter Phone Number' 
+      onChangeText={(value) => setPhoneNumber(value)} />
+
       {
         phoneError ? <Text style={LoginStyle.error}>Enter Phone NUmber
         </Text> : null
       }
-      <TextInputComponent placeholder='Enter Address' onChangeText={(value) => setAddress(value)} />
+      <TextInputComponent 
+      placeholder='Enter Address' 
+      onChangeText={(value) => setAddress(value)} />
+      
       {
         addressError ? <Text style={LoginStyle.error}>Enter Address</Text> : null
       }

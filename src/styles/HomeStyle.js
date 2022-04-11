@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native'
 const HomeStyle = StyleSheet.create({
     view: {
 
-        height: "90%"
+        // height: "90%"
     },
     img: {
         height: 20,
@@ -14,7 +14,8 @@ const HomeStyle = StyleSheet.create({
     touch: {
         position: 'absolute',
         right: 30,
-        bottom: 0,
+        bottom: 30,
+        // top:200,
         height:30,
         width:30,
         borderRadius:15,
@@ -26,19 +27,22 @@ const HomeStyle = StyleSheet.create({
         color: 'black',
         fontSize: 20,
         fontWeight: '600',
-        margin: 15
+        // margin: 15
     },
     logouttext: {
         color: 'tomato',
         fontSize: 17,
         fontWeight: '600',
-        margin: 15
+        // margin: 15
     },
     logout:{
-        flex:1,
+        // flex:1,
         flexDirection:'row',
-        // margin:10,
+        margin:10,
         justifyContent:'space-between'
+    },
+    text1:{
+        padding:3,fontSize:16
     }
 })
 export default HomeStyle
