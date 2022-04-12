@@ -29,7 +29,22 @@ import type from '../type'
             }
 
             case type.EDIT:
-                const newl = {...state,}
+                {
+                list = state.list.map((element)=>{
+                        const [data] = action.payload
+                        if(element.id  === action.id){
+                            return{
+                                ...state.list,
+                                id:id,
+                                name:data.name
+                            }
+                        }
+                        else{
+                            return{...state.list}
+                        }
+                    }
+                    )
+                }
         default:return state
     }
  }

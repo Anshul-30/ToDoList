@@ -14,7 +14,7 @@ export default function route() {
     return (
         <NavigationContainer>
             <Stack.Navigator screenOptions={{ headerShown: false }}>
-                {userStatus ? HomeStack(Stack) : AuthStack(Stack)}
+                {true ? HomeStack(Stack) : AuthStack(Stack)}
             </Stack.Navigator>
         </NavigationContainer>
     )

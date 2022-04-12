@@ -34,8 +34,8 @@ export default function AddTask({ navigation, route }) {
   const dispatch = useDispatch()
 
   function edit() {
-    console.log("edit")
-    dispatch(UpdateData(data1))
+    console.log(data1.id)
+    // dispatch(UpdateData(data1))
     navigation.navigate(navigationStrings.HOME)
   }
   function submit() {
