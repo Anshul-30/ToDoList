@@ -15,6 +15,9 @@ export default function Home({ navigation }) {
   const dispatch = useDispatch()
   const list = useSelector((state) => state.dataInput.list)
   console.log(list)
+
+
+
 const Edit =(data)=>{
   console.log(data)
   navigation.navigate(navigationString.TASK,{props:data})
@@ -56,6 +59,8 @@ const Edit =(data)=>{
                 <TouchableOpacity style={{margin:10}} onPress={() => dispatch(DeleteData(element.id))}>
                   <Image source={images.delete1} style={{height:35,width:35}} />
                 </TouchableOpacity>
+
+                
                 <TouchableOpacity style={{margin:10}} onPress={()=>Edit(element)}>
                   <Image source={images.edit} style={{height:30,width:30}} />
                 </TouchableOpacity>

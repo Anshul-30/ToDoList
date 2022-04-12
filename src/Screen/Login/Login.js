@@ -46,6 +46,7 @@ export default function Login({ navigation }) {
           <Text style={LoginStyle.text}>LOGIN</Text>
           <TextInputComponent
             placeholder='Enter Email'
+            value={email}
             onChangeText={(value) => setEmail(value)} />
 
           {nameShow ? <Text style={LoginStyle.error}>Enter Valid email</Text> : null}
@@ -54,7 +55,7 @@ export default function Login({ navigation }) {
           <TextInputComponent
             placeholder={'Enter Password'}
             onChangeText={(value) => setPass(value)}
-
+            value={pass}
           />
 
 

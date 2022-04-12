@@ -8,9 +8,10 @@ import type from '../type'
         case type.User_Data :
         const {id, data} = action.payload;
         return{
-            ...state,
+            
             list:[
-                ...state.list,{
+                ...state.list,
+                {
                     id:id,
                     name1:data.name,
                     age: data.age,
@@ -23,9 +24,12 @@ import type from '../type'
         case type.Delete_Data:
             const newlist = state.list.filter((element) => element.id != action.id)
             return{
-                ...state,
+                
                 list:newlist
             }
+
+            case type.EDIT:
+                const newl = {...state,}
         default:return state
     }
  }

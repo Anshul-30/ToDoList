@@ -7,7 +7,7 @@ import navigationStrings from '../../navigation/navigationString'
 import TextInputComponent from '../../Components/TextInput';
 import LoginStyle from '../../styles/LoginStyle';
 import { useDispatch } from 'react-redux';
-import { DataInput } from '../../redux/action/details';
+import { DataInput, UpdateData } from '../../redux/action/details';
 
 
 export default function AddTask({ navigation, route }) {
@@ -35,7 +35,7 @@ export default function AddTask({ navigation, route }) {
 
   function edit() {
     console.log("edit")
-
+    dispatch(UpdateData(data1))
     navigation.navigate(navigationStrings.HOME)
   }
   function submit() {
@@ -50,7 +50,7 @@ export default function AddTask({ navigation, route }) {
             if (address != 0) {
               setAddressError(false)
               dispatch(DataInput(data))
-              console.log(data)
+              // console.log(data)
               navigation.navigate(navigationStrings.HOME)
             }
             else

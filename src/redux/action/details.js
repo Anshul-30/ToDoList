@@ -15,3 +15,11 @@ return{
     id
 }
 }
+export const UpdateData = (data)=>{
+    return{
+        type:type.EDIT,
+        payload:{
+            data:data
+        }
+    }
+}
