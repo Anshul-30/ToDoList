@@ -1,5 +1,6 @@
 export default{
     LOGIN:"login",
     HOME:'home',
-    TASK:'task'
+    TASK:'task',
+    MAIN:'main'
 }

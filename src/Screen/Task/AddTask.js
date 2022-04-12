@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import { TextInput, View, Text, SafeAreaView } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import PhoneInput from "react-native-phone-number-input";
-import AddStyle from '../styles/AddTask';
-import navigationStrings from '../navigation/navigationString'
-import TextInputComponent from '../Components/TextInput';
-import LoginStyle from '../styles/LoginStyle';
+import AddStyle from '../../styles/AddTask';
+import navigationStrings from '../../navigation/navigationString'
+import TextInputComponent from '../../Components/TextInput';
+import LoginStyle from '../../styles/LoginStyle';
 import { useDispatch } from 'react-redux';
-import { DataInput } from '../redux/action/auth';
+import { DataInput } from '../../redux/action/auth';
 
 
 export default function AddTask({ navigation }) {
@@ -66,7 +66,7 @@ const dispatch = useDispatch()
       <Text style={AddStyle.text}>Fill details</Text>
       <TextInputComponent  
       placeholder='Enter Name'  
-      onChangeText={(value) => setName(value)} />
+      onChangeText={(value) => setName(value)} value={name}/>
 
       {
         nameError ? <Text style={LoginStyle.error}>Enter Name</Text> : null

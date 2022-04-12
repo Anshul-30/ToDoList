@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { TextInput, SafeAreaView, TouchableOpacity, View, Text } from 'react-native'
 import { useDispatch } from 'react-redux'
-import { Login1 } from '../redux/action/auth'
-import LoginStyle from '../styles/LoginStyle'
-import TextInputComponent from '../Components/TextInput'
-import images from '../constatnts/imagepath'
+import { Login1 } from '../../redux/action/auth'
+import LoginStyle from '../../styles/LoginStyle'
+import TextInputComponent from '../../Components/TextInput'
+import images from '../../constatnts/imagepath'
 
 export default function Login({ navigation }) {
   const dispatch = useDispatch()

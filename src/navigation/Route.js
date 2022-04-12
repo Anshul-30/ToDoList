@@ -3,6 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import AuthStack from "./AuthStack";
 import MainStack from "./MainStack";
+import HomeStack from "./HomeStack";
 import { useSelector } from "react-redux";
 import userState from "../redux/reducer/ContinueLogin";
 
@@ -13,7 +14,7 @@ export default function route() {
     return (
         <NavigationContainer>
             <Stack.Navigator screenOptions={{ headerShown: false }}>
-                {userStatus ? MainStack(Stack) : AuthStack(Stack)}
+                {userStatus ? HomeStack(Stack) : AuthStack(Stack)}
             </Stack.Navigator>
         </NavigationContainer>
     )

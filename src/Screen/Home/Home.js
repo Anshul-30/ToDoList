@@ -1,12 +1,12 @@
 import React from 'react'
 import { Text, SafeAreaView, View, Image, TouchableOpacity } from 'react-native'
-import images from '../constatnts/imagepath'
-import HomeStyle from '../styles/HomeStyle'
-import navigationString from '../navigation/navigationString'
+import images from '../../constatnts/imagepath'
+import HomeStyle from '../../styles/HomeStyle'
+import navigationString from '../../navigation/navigationString'
 import { useDispatch, useSelector } from 'react-redux'
-import { Logout } from '../redux/action/auth'
-import { DeleteData } from '../redux/action/auth'
-import dataInput from '../redux/reducer/DatnInput'
+import { Logout } from '../../redux/action/auth'
+import { DeleteData } from '../../redux/action/auth'
+import dataInput from '../../redux/reducer/DatnInput'
 import { ScrollView } from 'react-native-gesture-handler'
 export default function Home({ navigation }) {
   const dispatch = useDispatch()

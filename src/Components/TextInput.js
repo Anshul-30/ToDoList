@@ -5,7 +5,8 @@ const TextInputComponent = ({
 
     placeholder = '',
     placeholderTextColor = '',
-    onChangeText = ''
+    onChangeText = '',
+    value=" "
 
 }) => {
     return (

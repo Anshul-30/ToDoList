@@ -1,5 +1,7 @@
 import * as auth from './auth'
 
 export default{
-    ...auth
+    ...auth,
+// console.log(auth)
+    
 }

@@ -21,7 +21,7 @@ import type from '../type'
             ]
         }
         case type.Delete_Data:
-            const newlist = state.list.filter((element) => element.id !== action.id)
+            const newlist = state.list.filter((element) => element.id != action.id)
             return{
                 ...state,
                 list:newlist

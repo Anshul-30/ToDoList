@@ -1,5 +1,5 @@
 import React from 'react'
-import Login from '../Screen/Login'
+import Login from '../Screen/Login/Login'
 import navigationString from './navigationString'
 
 
