@@ -7,15 +7,19 @@ import navigationStrings from '../../navigation/navigationString'
 import TextInputComponent from '../../Components/TextInput';
 import LoginStyle from '../../styles/LoginStyle';
 import { useDispatch } from 'react-redux';
-import { DataInput } from '../../redux/action/auth';
+import { DataInput } from '../../redux/action/details';
 
 
-export default function AddTask({ navigation }) {
-  const [name, setName] = useState('')
-  const [age, setAge] = useState('')
-  const [address, setAddress] = useState('')
-  const [rollno, setRollno] = useState('')
-  const [phone, setPhoneNumber] = useState('')
+export default function AddTask({ navigation, route }) {
+
+  const data1 = route?.params?.props
+
+
+  const [name, setName] = useState(data1?.name1 ? data1?.name1 : "")
+  const [age, setAge] = useState(data1?.age ? data1?.age : "")
+  const [address, setAddress] = useState(data1?.address ? data1?.address : "")
+  const [rollno, setRollno] = useState(data1?.rollno ? data1?.rollno : "")
+  const [phone, setPhoneNumber] = useState(data1?.phone ? data1?.phone : "")
 
   const [nameError, setNameError] = useState(false)
   const [ageError, setAgeErro] = useState(false)
@@ -27,8 +31,14 @@ export default function AddTask({ navigation }) {
   const data = { name, age, rollno, phone, address }
 
 
-const dispatch = useDispatch()
-  const submit = () => {
+  const dispatch = useDispatch()
+
+  function edit() {
+    console.log("edit")
+
+    navigation.navigate(navigationStrings.HOME)
+  }
+  function submit() {
     if (name != '') {
       setNameError(false)
       if (age != 0) {
@@ -61,62 +71,62 @@ const dispatch = useDispatch()
 
 
   return (
-  <SafeAreaView>
-    <View style={AddStyle.view}>
-      <Text style={AddStyle.text}>Fill details</Text>
-      <TextInputComponent  
-      placeholder='Enter Name'  
-      onChangeText={(value) => setName(value)} value={name}/>
+    <SafeAreaView>
+      <View style={AddStyle.view}>
+        <Text style={AddStyle.text}>Fill details</Text>
+        <TextInputComponent
+          placeholder='Enter Name'
+          value={name}
+          onChangeText={(value) => setName(value)} />
 
-      {
-        nameError ? <Text style={LoginStyle.error}>Enter Name</Text> : null
-      }
-      <TextInputComponent 
-      placeholder='Enter Age' 
-      onChangeText={(value) => setAge(value)} />
+        {
+          nameError ? <Text style={LoginStyle.error}>Enter Name</Text> : null
+        }
+        <TextInputComponent
+          placeholder='Enter Age'
+          value={age}
+          onChangeText={(value) => setAge(value)} />
 
-      {
-        ageError ? <Text style={LoginStyle.error}>Enter Age</Text> : null
-      }
-      <TextInputComponent 
-      placeholder='Enter RollNo' 
-      onChangeText={(value) => setRollno(value)} />
+        {
+          ageError ? <Text style={LoginStyle.error}>Enter Age</Text> : null
+        }
+        <TextInputComponent
+          placeholder='Enter RollNo'
+          onChangeText={(value) => setRollno(value)}
+          value={rollno}
+        />
 
-      {
-        rollnoError ? <Text style={LoginStyle.error}>Enter Rollno </Text> : null
-      }
-      <TextInputComponent 
-      placeholder='Enter Phone Number' 
-      onChangeText={(value) => setPhoneNumber(value)} />
+        {
+          rollnoError ? <Text style={LoginStyle.error}>Enter Rollno </Text> : null
+        }
+        <TextInputComponent
+          placeholder='Enter Phone Number'
+          onChangeText={(value) => setPhoneNumber(value)}
+          value={phone}
+        />
 
-      {
-        phoneError ? <Text style={LoginStyle.error}>Enter Phone NUmber
-        </Text> : null
-      }
-      <TextInputComponent 
-      placeholder='Enter Address' 
-      onChangeText={(value) => setAddress(value)} />
-      
-      {
-        addressError ? <Text style={LoginStyle.error}>Enter Address</Text> : null
-      }
-      <TouchableOpacity activeOpacity={0.8} onPress={submit}>
-        <View style={AddStyle.submitview}>
-          <Text style={AddStyle.submit}> Submit</Text>
-        </View>
-      </TouchableOpacity>
+        {
+          phoneError ? <Text style={LoginStyle.error}>Enter Phone NUmber
+          </Text> : null
+        }
+        <TextInputComponent
+          placeholder='Enter Address'
+          onChangeText={(value) => setAddress(value)}
+          value={address}
+        />
 
-      {/* <PhoneInput
-        displayInitialValueAsLocalNumber={true}
-          placeholder='Enter phone number'
-          containerStyle={{ height: 65, width: '95%', borderRadius: 3 }}
-          withDarkTheme
-          withShadow
-          autoFocus
-          onChangeText={(value) => setText(value)}
-          /> */}
-    </View>
-  </SafeAreaView>
+        {
+          addressError ? <Text style={LoginStyle.error}>Enter Address</Text> : null
+        }
+        <TouchableOpacity activeOpacity={0.8} onPress={data1 ? () => edit() : () => submit()}>
+          <View style={AddStyle.submitview}>
+            <Text style={AddStyle.submit}> {data1 ? "Edit" : "submit"}</Text>
+          </View>
+        </TouchableOpacity>
+
+        
+      </View>
+    </SafeAreaView>
 
 
 

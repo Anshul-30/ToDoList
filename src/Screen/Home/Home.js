@@ -5,13 +5,22 @@ import HomeStyle from '../../styles/HomeStyle'
 import navigationString from '../../navigation/navigationString'
 import { useDispatch, useSelector } from 'react-redux'
 import { Logout } from '../../redux/action/auth'
-import { DeleteData } from '../../redux/action/auth'
+import { DeleteData } from '../../redux/action/details'
 import dataInput from '../../redux/reducer/DatnInput'
 import { ScrollView } from 'react-native-gesture-handler'
+
+
+
 export default function Home({ navigation }) {
   const dispatch = useDispatch()
   const list = useSelector((state) => state.dataInput.list)
   console.log(list)
+const Edit =(data)=>{
+  console.log(data)
+  navigation.navigate(navigationString.TASK,{props:data})
+}
+
+
   return (
 
     // <SafeAreaView>
@@ -31,7 +40,7 @@ export default function Home({ navigation }) {
               <View  style={{ shadowOpacity:.5,shadowOffset:{height:2,width:-2},elevation:7,backgroundColor:'white',flexDirection: 'row',borderRadius:5,justifyContent:'space-between',
             margin:7}}>
                 <View style={{margin:10}}>
-                  <Text style={HomeStyle.text1}>Name : {element.name}
+                  <Text style={HomeStyle.text1}>Name : {element.name1}
                   </Text>
                   <Text style={HomeStyle.text1}>Age : {element.age}
                   </Text>
@@ -47,7 +56,7 @@ export default function Home({ navigation }) {
                 <TouchableOpacity style={{margin:10}} onPress={() => dispatch(DeleteData(element.id))}>
                   <Image source={images.delete1} style={{height:35,width:35}} />
                 </TouchableOpacity>
-                <TouchableOpacity style={{margin:10}} >
+                <TouchableOpacity style={{margin:10}} onPress={()=>Edit(element)}>
                   <Image source={images.edit} style={{height:30,width:30}} />
                 </TouchableOpacity>
                   </View>

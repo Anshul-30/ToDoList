@@ -12,7 +12,7 @@ import type from '../type'
             list:[
                 ...state.list,{
                     id:id,
-                    name:data.name,
+                    name1:data.name,
                     age: data.age,
                     rollno : data.rollno,
                     phone:data.phone,
