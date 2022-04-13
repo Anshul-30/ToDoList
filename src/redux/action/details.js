@@ -16,10 +16,10 @@ return{
 }
 }
 export const UpdateData = (data)=>{
+    // console.log(index)
     return{
         type:type.EDIT,
-        payload:{
-            data:data
+        payload:data,
+            
         }
     }
-}

@@ -12,14 +12,14 @@ import { DataInput, UpdateData } from '../../redux/action/details';
 
 export default function AddTask({ navigation, route }) {
 
-  const data1 = route?.params?.props
+  const id = route?.params?.props
 
 
-  const [name, setName] = useState(data1?.name1 ? data1?.name1 : "")
-  const [age, setAge] = useState(data1?.age ? data1?.age : "")
-  const [address, setAddress] = useState(data1?.address ? data1?.address : "")
-  const [rollno, setRollno] = useState(data1?.rollno ? data1?.rollno : "")
-  const [phone, setPhoneNumber] = useState(data1?.phone ? data1?.phone : "")
+  const [name, setName] = useState(id?.name ? id?.name : "")
+  const [age, setAge] = useState(id?.age ? id?.age : "")
+  const [address, setAddress] = useState(id?.address ? id?.address : "")
+  const [rollno, setRollno] = useState(id?.rollno ? id?.rollno : "")
+  const [phone, setPhoneNumber] = useState(id?.phone ? id?.phone : "")
 
   const [nameError, setNameError] = useState(false)
   const [ageError, setAgeErro] = useState(false)
@@ -33,12 +33,14 @@ export default function AddTask({ navigation, route }) {
 
   const dispatch = useDispatch()
 
-  function edit() {
-    console.log(data1.id)
-    // dispatch(UpdateData(data1))
+  const edit= ()=> {
+    // console.log(data1.id,index)
+    // console.log(data)
+    dispatch(UpdateData({name,age,rollno,phone,address ,index:route.params.index,id}))
+    console.log(UpdateData)
     navigation.navigate(navigationStrings.HOME)
   }
-  function submit() {
+ const  submit=()=> {
     if (name != '') {
       setNameError(false)
       if (age != 0) {
@@ -118,9 +120,9 @@ export default function AddTask({ navigation, route }) {
         {
           addressError ? <Text style={LoginStyle.error}>Enter Address</Text> : null
         }
-        <TouchableOpacity activeOpacity={0.8} onPress={data1 ? () => edit() : () => submit()}>
+        <TouchableOpacity activeOpacity={0.8} onPress={id ? edit :  submit}>
           <View style={AddStyle.submitview}>
-            <Text style={AddStyle.submit}> {data1 ? "Edit" : "submit"}</Text>
+            <Text style={AddStyle.submit}> {id ? "Edit" : "submit"}</Text>
           </View>
         </TouchableOpacity>
 

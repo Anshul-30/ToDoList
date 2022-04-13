@@ -18,10 +18,10 @@ export default function Home({ navigation }) {
 
 
 
-const Edit =(data)=>{
-  console.log(data)
-  navigation.navigate(navigationString.TASK,{props:data})
-}
+  const Edit = (data, index) => {
+    console.log(data, "index", index)
+    navigation.navigate(navigationString.TASK, { props: data, index})
+  }
 
 
   return (
@@ -36,43 +36,45 @@ const Edit =(data)=>{
         </TouchableOpacity>
       </View>
       <ScrollView>
-      {
-        list.map((element,index) => {
-          return (
-            <>
-              <View  style={{ shadowOpacity:.5,shadowOffset:{height:2,width:-2},elevation:7,backgroundColor:'white',flexDirection: 'row',borderRadius:5,justifyContent:'space-between',
-            margin:7}} key={index}>
-                <View style={{margin:10}}>
-                  <Text style={HomeStyle.text1}>Name : {element.name1}
-                  </Text>
-                  <Text style={HomeStyle.text1}>Age : {element.age}
-                  </Text>
-                  <Text  style={HomeStyle.text1}>RollNo : {element.rollno}
-                  </Text>
-                  <Text style={HomeStyle.text1}>Phone Number : {element.phone}
-                  </Text>
-                  <Text style={HomeStyle.text1}>Address : {element.address}
-                  </Text>
-                </View>
-                  <View style={{flexDirection:'column',justifyContent:'space-between'}}>
-
-                <TouchableOpacity style={{margin:10}} onPress={() => dispatch(DeleteData(element.id))}>
-                  <Image source={images.delete1} style={{height:35,width:35}} />
-                </TouchableOpacity>
-
-                
-                <TouchableOpacity style={{margin:10}} onPress={()=>Edit(element)}>
-                  <Image source={images.edit} style={{height:30,width:30}} />
-                </TouchableOpacity>
+        {
+          list.map((element, index) => {
+            return (
+              <>
+                <View style={{
+                  shadowOpacity: .5, shadowOffset: { height: 2, width: -2 }, elevation: 7, backgroundColor: 'white', flexDirection: 'row', borderRadius: 5, justifyContent: 'space-between',
+                  margin: 7
+                }} >
+                  <View style={{ margin: 10 }}>
+                    <Text style={HomeStyle.text1}>Name : {element.name}
+                    </Text>
+                    <Text style={HomeStyle.text1}>Age : {element.age}
+                    </Text>
+                    <Text style={HomeStyle.text1}>RollNo : {element.rollno}
+                    </Text>
+                    <Text style={HomeStyle.text1}>Phone Number : {element.phone}
+                    </Text>
+                    <Text style={HomeStyle.text1}>Address : {element.address}
+                    </Text>
                   </View>
-              </View>
+                  <View style={{ flexDirection: 'column', justifyContent: 'space-between' }}>
 
-            </>
-          )
-        })
-      }
+                    <TouchableOpacity style={{ margin: 10 }} onPress={() => dispatch(DeleteData(element.id))}>
+                      <Image source={images.delete1} style={{ height: 35, width: 35 }} />
+                    </TouchableOpacity>
+
+
+                    <TouchableOpacity style={{ margin: 10 }} onPress={() => Edit(element, index)}>
+                      <Image source={images.edit} style={{ height: 30, width: 30 }} />
+                    </TouchableOpacity>
+                  </View>
+                </View>
+
+              </>
+            )
+          })
+        }
       </ScrollView>
-      
+
 
 
       <TouchableOpacity onPress={() => navigation.navigate(navigationString.TASK)} style={HomeStyle.touch}>
@@ -83,7 +85,7 @@ const Edit =(data)=>{
     </View>
 
 
-/* </SafeAreaView> */
+    /* </SafeAreaView> */
 
 
 
