@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { TextInput, View, Text, SafeAreaView } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import PhoneInput from "react-native-phone-number-input";
@@ -15,11 +15,11 @@ export default function AddTask({ navigation, route }) {
   const id = route?.params?.props
 
 
-  const [name, setName] = useState(id?.name ? id?.name : "")
-  const [age, setAge] = useState(id?.age ? id?.age : "")
-  const [address, setAddress] = useState(id?.address ? id?.address : "")
-  const [rollno, setRollno] = useState(id?.rollno ? id?.rollno : "")
-  const [phone, setPhoneNumber] = useState(id?.phone ? id?.phone : "")
+  const [name, setName] = useState("")
+  const [age, setAge] = useState("")
+  const [address, setAddress] = useState("")
+  const [rollno, setRollno] = useState("")
+  const [phone, setPhoneNumber] = useState("")
 
   const [nameError, setNameError] = useState(false)
   const [ageError, setAgeErro] = useState(false)
@@ -30,17 +30,27 @@ export default function AddTask({ navigation, route }) {
 
   const data = { name, age, rollno, phone, address }
 
+  useEffect(() => {
+    if (id) {
+      setName(id?.name)
+      setAge(id?.age)
+      setAddress(id?.address)
+      setPhoneNumber(id?.phone)
+      setRollno(id?.rollno)
+    }
+  }, [id])
+
 
   const dispatch = useDispatch()
 
-  const edit= ()=> {
+  const edit = () => {
     // console.log(data1.id,index)
     // console.log(data)
-    dispatch(UpdateData({name,age,rollno,phone,address ,index:route.params.index,id}))
+    dispatch(UpdateData({ name, age, rollno, phone, address, index: route.params.index, id }))
     console.log(UpdateData)
     navigation.navigate(navigationStrings.HOME)
   }
- const  submit=()=> {
+  const submit = () => {
     if (name != '') {
       setNameError(false)
       if (age != 0) {
@@ -87,6 +97,8 @@ export default function AddTask({ navigation, route }) {
         <TextInputComponent
           placeholder='Enter Age'
           value={age}
+          keyboardType={"numeric"}
+
           onChangeText={(value) => setAge(value)} />
 
         {
@@ -94,6 +106,8 @@ export default function AddTask({ navigation, route }) {
         }
         <TextInputComponent
           placeholder='Enter RollNo'
+          keyboardType={"numeric"}
+
           onChangeText={(value) => setRollno(value)}
           value={rollno}
         />
@@ -105,6 +119,8 @@ export default function AddTask({ navigation, route }) {
           placeholder='Enter Phone Number'
           onChangeText={(value) => setPhoneNumber(value)}
           value={phone}
+          keyboardType={"numeric"}
+
         />
 
         {
@@ -120,13 +136,13 @@ export default function AddTask({ navigation, route }) {
         {
           addressError ? <Text style={LoginStyle.error}>Enter Address</Text> : null
         }
-        <TouchableOpacity activeOpacity={0.8} onPress={id ? edit :  submit}>
+        <TouchableOpacity activeOpacity={0.8} onPress={id ? edit : submit}>
           <View style={AddStyle.submitview}>
             <Text style={AddStyle.submit}> {id ? "Edit" : "submit"}</Text>
           </View>
         </TouchableOpacity>
 
-        
+
       </View>
     </SafeAreaView>
 
