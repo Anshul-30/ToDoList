@@ -8,6 +8,7 @@ import TextInputComponent from '../../Components/TextInput';
 import LoginStyle from '../../styles/LoginStyle';
 import { useDispatch } from 'react-redux';
 import { DataInput, UpdateData } from '../../redux/action/details';
+import { setData } from '../../utils/utils';
 
 
 export default function AddTask({ navigation, route }) {
@@ -27,11 +28,13 @@ export default function AddTask({ navigation, route }) {
   const [rollnoError, setRollnoError] = useState(false)
   const [phoneError, setPhoneNumberError] = useState(false)
 
+  const userId = Math.floor(Math.random() * 1000);
 
-  const data = { name, age, rollno, phone, address }
+  const data = [{ userId, name, age, rollno, phone, address }];
 
   useEffect(() => {
-    if (id) {
+    if (id)
+ {
       setName(id?.name)
       setAge(id?.age)
       setAddress(id?.address)
@@ -57,9 +60,10 @@ export default function AddTask({ navigation, route }) {
         setAgeErro(false)
         if (rollno != '') {
           setRollnoError(false)
-          if (phone.length == 10) {
+          if (phone.length != 0) {
             setPhoneNumberError(false)
             if (address != 0) {
+              setData(data);
               setAddressError(false)
               dispatch(DataInput(data))
               // console.log(data)

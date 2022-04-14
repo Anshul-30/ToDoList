@@ -8,6 +8,7 @@ import { Logout } from '../../redux/action/auth'
 import { DeleteData } from '../../redux/action/details'
 import dataInput from '../../redux/reducer/DatnInput'
 import { ScrollView } from 'react-native-gesture-handler'
+import { setData } from '../../utils/utils'
 
 
 
@@ -16,7 +17,7 @@ export default function Home({ navigation }) {
   const list = useSelector((state) => state.dataInput.list)
   console.log(list)
 
-
+setData(list)
 
   const Edit = (data, index) => {
     console.log(data, "index", index)
