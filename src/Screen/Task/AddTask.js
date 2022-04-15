@@ -46,11 +46,36 @@ export default function AddTask({ navigation, route }) {
   const dispatch = useDispatch()
 
   const edit = () => {
-    // console.log(data1.id,index)
-    // console.log(data)
-    dispatch(UpdateData({ name, age, rollno, phone, address, editid }))
-    console.log(UpdateData)
-    navigation.navigate(navigationStrings.HOME)
+    if (name != '') {
+      setNameError(false)
+      if (age != 0) {
+        setAgeErro(false)
+        if (rollno != '') {
+          setRollnoError(false)
+          if (phone.length == 10) {
+            setPhoneNumberError(false)
+            if (address != 0) {
+              // console.log(data1.id,index)
+              // console.log(data)
+              dispatch(UpdateData({ name, age, rollno, phone, address, editid }))
+              console.log(UpdateData)
+              navigation.navigate(navigationStrings.HOME)
+            }
+            else
+              setAddressError(true)
+          }
+          else
+            setPhoneNumberError(true)
+        }
+        else
+          setRollnoError(true)
+      }
+      else
+        setAgeErro(true)
+    }
+    else
+      setNameError(true)
+
   }
   const submit = () => {
     if (name != '') {
