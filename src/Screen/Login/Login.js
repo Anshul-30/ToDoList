@@ -51,7 +51,7 @@ const data1 =[{email ,pass}]
     }
   }
 
-  
+
   return (
     <>
       <SafeAreaView>
@@ -70,6 +70,7 @@ const data1 =[{email ,pass}]
             placeholder={'Enter Password'}
             onChangeText={(value) => setPass(value)}
             value={pass}
+            securetext={true}
           />
 
 

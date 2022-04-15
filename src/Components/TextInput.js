@@ -7,7 +7,8 @@ const TextInputComponent = ({
     placeholderTextColor = '',
     onChangeText = '',
     value=" ",
-    keyboardType
+    keyboardType,
+    securetext= false
 
 }) => {
     return (
@@ -15,7 +16,7 @@ const TextInputComponent = ({
             <View style={style.container}>
 
                 <View>
-                    <TextInput  value={value} placeholder={placeholder} placeholderTextColor='black' onChangeText={onChangeText} style={{padding:7,color:'black'}} keyboardType={keyboardType}/>
+                    <TextInput secureTextEntry={securetext} value={value} placeholder={placeholder} placeholderTextColor='black' onChangeText={onChangeText} style={{padding:7,color:'black'}} keyboardType={keyboardType}/>
                 </View>
 
             </View>
@@ -28,7 +29,7 @@ export default TextInputComponent
 
 const style = StyleSheet.create({
     container: {
-        flexDirection: 'row',
+        // flexDirection: 'row',
         marginHorizontal: 10,
         // padding: 10,
         height:35,
