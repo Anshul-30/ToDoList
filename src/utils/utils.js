@@ -1,4 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
+//  ------------------set and get data in async--------------------------
 
 export const setData = async (data) => {
     try {
@@ -23,6 +24,8 @@ export const getData = async () => {
         console.log(error);
     }
 }
+// --------------------- set and get and remove login details  async ---------------------
+
 
 export const setLogin = async (login) => {
     try {

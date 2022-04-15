@@ -29,7 +29,7 @@ export default function AddTask({ navigation, route }) {
   const [phoneError, setPhoneNumberError] = useState(false)
 
   const userId = Math.floor(Math.random() * 1000);
-
+  const dispatch = useDispatch()
   const data = [{ userId, name, age, rollno, phone, address }];
 
   useEffect(() => {
@@ -43,7 +43,7 @@ export default function AddTask({ navigation, route }) {
   }, [id])
 
 
-  const dispatch = useDispatch()
+  
 
   const edit = () => {
     if (name != '') {

@@ -23,6 +23,11 @@ export default function Login({ navigation }) {
   const emailRegex = /^[\w-\.\_\$]+@([\w]{3,5}\.)[\w]{2,4}$/;
   const strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%\^&\*])(?=.{8,})");
 const data1 =[{email ,pass}]
+
+
+// ----------------validations----------
+
+
   const click = () => {
     if (email != 0) {
       setEmailError(false)
@@ -45,6 +50,8 @@ const data1 =[{email ,pass}]
       setEmailError(true)
     }
   }
+
+  
   return (
     <>
       <SafeAreaView>
