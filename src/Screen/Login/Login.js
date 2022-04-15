@@ -8,8 +8,8 @@ import images from '../../constatnts/imagepath'
 
 export default function Login({ navigation }) {
   const dispatch = useDispatch()
-  const [pass, setPass] = useState('')
-  const [email, setEmail] = useState('')
+  const [pass, setPass] = useState('Anshul@30')
+  const [email, setEmail] = useState('Anshul@gmail.com')
   const [nameShow, setNameShow] = useState(false)
   const [passShow, setPassShow] = useState(false)
   const [emailError, setEmailError] = useState(false)
