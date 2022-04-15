@@ -1,19 +1,22 @@
 import React from "react";
 import { StyleSheet } from 'react-native'
+import { moderateScale, moderateScaleVertical, textScale } from "./responsiveSize";
 
 const LoginStyle = StyleSheet.create({
     view: {
+        // flex:1,
         justifyContent:'center',
+        // alignContent:'center'
         height:'85%',
-        // backgroundColor:'red',
+        
         
     },
     text:{
         color:'green',
         textAlign:'center',
         fontWeight:'600',
-        fontSize:25,
-        padding:10
+        fontSize:textScale(20),
+        padding:moderateScaleVertical(7)
     },
     textInput: {
         borderRadius: 4,
@@ -33,7 +36,7 @@ const LoginStyle = StyleSheet.create({
     } ,
     error:{
         color:'red',
-        marginLeft:10
+        marginLeft:moderateScale(10)
     }    
 })
 export default LoginStyle

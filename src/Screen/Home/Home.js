@@ -17,11 +17,11 @@ export default function Home({ navigation }) {
   const list = useSelector((state) => state.dataInput.list)
   // console.log(list)
 
-// setData(list)
+  // setData(list)
 
   const Edit = (data) => {
     // console.log(data, "index", index)
-    navigation.navigate(navigationString.TASK, { props: data})
+    navigation.navigate(navigationString.TASK, { props: data })
   }
 
 
@@ -76,17 +76,19 @@ export default function Home({ navigation }) {
         }
       </ScrollView>
 
+      <View>
+        <TouchableOpacity onPress={() => navigation.navigate(navigationString.TASK)} style={HomeStyle.touch}>
+          <Image source={images.plus} style={HomeStyle.img} />
+        </TouchableOpacity>
+      </View>
 
 
-      <TouchableOpacity onPress={() => navigation.navigate(navigationString.TASK)} style={HomeStyle.touch}>
-        <Image source={images.plus} style={HomeStyle.img} />
-      </TouchableOpacity>
 
 
     </View>
 
 
-    
+
 
 
 

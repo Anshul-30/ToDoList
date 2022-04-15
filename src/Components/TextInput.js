@@ -1,5 +1,6 @@
 import React from "react"
 import { TextInput, View, Image, StyleSheet, Text } from 'react-native'
+import { moderateScale, moderateScaleVertical } from "../styles/responsiveSize"
 
 const TextInputComponent = ({
 
@@ -35,10 +36,10 @@ const style = StyleSheet.create({
         height:35,
         borderRadius: 5,
         borderWidth: 1,
-        marginVertical: 10
+        marginVertical: moderateScaleVertical(10)
     },
     img: {
-        height: 20,
-        width: 20
+        height: moderateScale(20),
+        width: moderateScale(20)
     }
 })

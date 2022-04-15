@@ -56,6 +56,7 @@ const data1 =[{email ,pass}]
     <>
       <SafeAreaView>
         <View style={LoginStyle.view}>
+          <View > 
 
           <Text style={LoginStyle.text}>LOGIN</Text>
           <TextInputComponent
@@ -66,16 +67,20 @@ const data1 =[{email ,pass}]
           {nameShow ? <Text style={LoginStyle.error}>Enter Valid email</Text> : null}
           {emailError ? <Text style={LoginStyle.error}>Email can not be empty </Text> : null}
 
+            </View>
+            <View>
+
           <TextInputComponent
             placeholder={'Enter Password'}
             onChangeText={(value) => setPass(value)}
             value={pass}
             securetext={true}
-          />
+            />
 
 
           {passShow ? <Text style={LoginStyle.error}>Enter Strong Password</Text> : null}
 
+            </View>
           <TouchableOpacity onPress={click}>
             <View style={LoginStyle.btn}>
               <Text style={{ color: 'white' }}>LOGIN</Text>

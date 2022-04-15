@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet } from 'react-native'
+import { moderateScale, textScale } from "./responsiveSize";
 
 const HomeStyle = StyleSheet.create({
     view: {
@@ -7,8 +8,8 @@ const HomeStyle = StyleSheet.create({
         // height: "90%"
     },
     img: {
-        height: 20,
-        width: 20,
+        height: moderateScale(15),
+        width: moderateScale(15)
 
     },
     touch: {
@@ -16,22 +17,22 @@ const HomeStyle = StyleSheet.create({
         right: 30,
         bottom: 30,
         // top:200,
-        height:30,
-        width:30,
-        borderRadius:15,
+        height:moderateScale(30),
+        width:moderateScale(30),
+        borderRadius:moderateScale(15),
         alignItems:'center',
         justifyContent:'center',
         backgroundColor:'lightgreen'
     },
     text: {
         color: 'black',
-        fontSize: 20,
+        fontSize: textScale(16),
         fontWeight: '600',
         // margin: 15
     },
     logouttext: {
         color: 'tomato',
-        fontSize: 17,
+        fontSize: textScale(16),
         fontWeight: '600',
         // margin: 15
     },
@@ -44,7 +45,7 @@ const HomeStyle = StyleSheet.create({
     text1:{
         padding:3,
         color:'black',
-        fontSize:16
+        fontSize:textScale(14)
     }
 })
 export default HomeStyle
