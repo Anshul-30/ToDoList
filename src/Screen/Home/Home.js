@@ -31,6 +31,10 @@ export default function Home({ navigation }) {
     <View style={{ position: 'relative', flex: 1 }}>
       <View style={HomeStyle.logout}>
         <Text style={HomeStyle.text}>Home</Text>
+        <TouchableOpacity onPress={()=>navigation.navigate(navigationString.SETTING)}>
+          <Text style={HomeStyle.text}>Setting</Text>
+
+        </TouchableOpacity>
         <TouchableOpacity onPress={() => dispatch(Logout())}>
           <Text style={HomeStyle.logouttext}>Logout</Text>
 
@@ -40,11 +44,11 @@ export default function Home({ navigation }) {
         {
           list.map((element, index) => {
             return (
-              <>
+
                 <View style={{
                   shadowOpacity: .5, shadowOffset: { height: 2, width: -2 }, elevation: 7, backgroundColor: 'white', flexDirection: 'row', borderRadius: 5, justifyContent: 'space-between',
                   margin: 7
-                }} >
+                }} key={index}>
                   <View style={{ margin: 10 }}>
                     <Text style={HomeStyle.text1}>Name : {element.name}
                     </Text>
@@ -70,7 +74,6 @@ export default function Home({ navigation }) {
                   </View>
                 </View>
 
-              </>
             )
           })
         }

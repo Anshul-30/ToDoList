@@ -23,9 +23,11 @@ const userState = (state = initialState, action) => {
             removelogin()
 
 
-            return { 
+            return {
                 userdata: undefined
-             }
+            }
+        
+          
 
         default: return state
     }

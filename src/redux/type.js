@@ -3,5 +3,6 @@ export default {
     LOGOUT:'logout',
     User_Data :'datainput',
     Delete_Data:'delete',
-    EDIT :'update'
+    EDIT :'update',
+    SETTING:"setting"
 }

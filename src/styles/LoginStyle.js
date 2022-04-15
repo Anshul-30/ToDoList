@@ -30,9 +30,9 @@ const LoginStyle = StyleSheet.create({
         alignItems:'center',
         backgroundColor:'green',
         padding:10,
-        borderRadius:5,
-        marginHorizontal:50,
-        marginTop:10,
+        borderRadius:moderateScale(5),
+        marginHorizontal:moderateScale(40),
+        marginTop:moderateScaleVertical(12),
 
     } ,
     error:{

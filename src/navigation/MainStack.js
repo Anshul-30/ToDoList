@@ -4,6 +4,7 @@ import Home from '../Screen/Home/Home'
 
 import navigationString from './navigationString'
 import { createStackNavigator } from '@react-navigation/stack'
+import Setting from '../Screen/Setting/Setting'
 
 const Stack = createStackNavigator()
 export default function MainStack() {
@@ -13,6 +14,7 @@ export default function MainStack() {
 
       <Stack.Screen name={navigationString.HOME} component={Home} />
       <Stack.Screen name={navigationString.TASK} component={AddTask} />
+      <Stack.Screen name={navigationString.SETTING} component={Setting} />
 
     </Stack.Navigator>
     </>
