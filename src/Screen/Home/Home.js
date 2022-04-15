@@ -27,7 +27,7 @@ setData(list)
 
   return (
 
-    // <SafeAreaView>
+
     <View style={{ position: 'relative', flex: 1 }}>
       <View style={HomeStyle.logout}>
         <Text style={HomeStyle.text}>Home</Text>
@@ -86,7 +86,7 @@ setData(list)
     </View>
 
 
-    /* </SafeAreaView> */
+    
 
 
 
