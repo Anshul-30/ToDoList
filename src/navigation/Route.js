@@ -10,11 +10,11 @@ import userState from "../redux/reducer/ContinueLogin";
 const Stack = createStackNavigator();
 
 export default function route() {
-    const userStatus = useSelector(state => state.userState);
+    const userStatus = useSelector(state => state.userState.userdata);
     return (
         <NavigationContainer>
             <Stack.Navigator screenOptions={{ headerShown: false }}>
-                {userStatus ? HomeStack(Stack) : AuthStack(Stack)}
+                {userStatus != null ? HomeStack(Stack) : AuthStack(Stack)}
             </Stack.Navigator>
         </NavigationContainer>
     )

@@ -15,9 +15,9 @@ import { setData } from '../../utils/utils'
 export default function Home({ navigation }) {
   const dispatch = useDispatch()
   const list = useSelector((state) => state.dataInput.list)
-  console.log(list)
+  // console.log(list)
 
-setData(list)
+// setData(list)
 
   const Edit = (data) => {
     // console.log(data, "index", index)

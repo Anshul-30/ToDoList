@@ -12,6 +12,7 @@ const {dispatch} = store;
 const App = () => {
 
   useEffect(() => {
+
     getLogin().then((res)=>{
       
       dispatch({
@@ -19,14 +20,16 @@ const App = () => {
         payload:res
       })
     })
+
     getData().then((res) => {
       console.log("res", res);
-      if (!!res) {
+      if(!!res){
+      
         dispatch({
           type: type.User_Data,
           payload: res
-        })
-      }
+        })}
+      
     })
   }, [])
 

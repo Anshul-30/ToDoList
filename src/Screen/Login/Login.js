@@ -8,8 +8,8 @@ import images from '../../constatnts/imagepath'
 
 export default function Login({ navigation }) {
   const dispatch = useDispatch()
-  const [pass, setPass] = useState('Anshul@30')
-  const [email, setEmail] = useState('anshul@gmail.com')
+  const [pass, setPass] = useState('')
+  const [email, setEmail] = useState('')
   const [nameShow, setNameShow] = useState(false)
   const [passShow, setPassShow] = useState(false)
   const [emailError, setEmailError] = useState(false)
@@ -22,7 +22,7 @@ export default function Login({ navigation }) {
 
   const emailRegex = /^[\w-\.\_\$]+@([\w]{3,5}\.)[\w]{2,4}$/;
   const strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%\^&\*])(?=.{8,})");
-
+const data1 =[{email ,pass}]
   const click = () => {
     if (email != 0) {
       setEmailError(false)
@@ -30,7 +30,7 @@ export default function Login({ navigation }) {
         setNameShow(false)
         if (strongRegex.test(pass)) {
           setPassShow(false)
-          dispatch(Login1(email ,pass))
+          dispatch(Login1(data1))
 
         }
         else {

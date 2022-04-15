@@ -14,14 +14,14 @@ import { setData } from '../../utils/utils';
 export default function AddTask({ navigation, route }) {
 
   const id = route?.params?.props
-const editid = id?.userId
+  const editid = id?.userId
 
   const [name, setName] = useState("")
   const [age, setAge] = useState("")
   const [address, setAddress] = useState("")
   const [rollno, setRollno] = useState("")
   const [phone, setPhoneNumber] = useState("")
-// ------------------State---------------------
+  // ------------------State---------------------
   const [nameError, setNameError] = useState(false)
   const [ageError, setAgeErro] = useState(false)
   const [addressError, setAddressError] = useState(false)
@@ -33,8 +33,7 @@ const editid = id?.userId
   const data = [{ userId, name, age, rollno, phone, address }];
 
   useEffect(() => {
-    if (id)
- {
+    if (id) {
       setName(id?.name)
       setAge(id?.age)
       setAddress(id?.address)
@@ -49,7 +48,7 @@ const editid = id?.userId
   const edit = () => {
     // console.log(data1.id,index)
     // console.log(data)
-    dispatch(UpdateData({ name, age, rollno, phone, address,editid  }))
+    dispatch(UpdateData({ name, age, rollno, phone, address, editid }))
     console.log(UpdateData)
     navigation.navigate(navigationStrings.HOME)
   }
