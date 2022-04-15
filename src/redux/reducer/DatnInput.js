@@ -2,9 +2,16 @@ import React from 'react'
 import { act } from 'react-test-renderer';
 import { setData } from '../../utils/utils';
 import type from '../type'
+
+
+
+
 const initialState = {
     list: []
 };
+
+
+
 const dataInput = (state = initialState, action) => {
     switch (action.type) {
         case type.User_Data: {
@@ -43,13 +50,7 @@ const dataInput = (state = initialState, action) => {
                 list: newList1
             }
 
-        // case type.Delete_Data: {
-        //     const newlist = state.list.filter((element) => element.id != action.id)
-        //     return {
 
-        //         list: newlist
-        //     }
-        // }
 
         case type.EDIT: {
             console.log("Data", action.payload)

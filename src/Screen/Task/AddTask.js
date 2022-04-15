@@ -60,7 +60,7 @@ const editid = id?.userId
         setAgeErro(false)
         if (rollno != '') {
           setRollnoError(false)
-          if (phone.length != 0) {
+          if (phone.length == 10) {
             setPhoneNumberError(false)
             if (address != 0) {
               setData(data);
