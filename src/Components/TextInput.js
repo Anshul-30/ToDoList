@@ -15,7 +15,7 @@ const TextInputComponent = ({
             <View style={style.container}>
 
                 <View>
-                    <TextInput  value={value} placeholder={placeholder} placeholderTextColor='black' onChangeText={onChangeText} style={{padding:7}} keyboardType={keyboardType}/>
+                    <TextInput  value={value} placeholder={placeholder} placeholderTextColor='black' onChangeText={onChangeText} style={{padding:7,color:'black'}} keyboardType={keyboardType}/>
                 </View>
 
             </View>
