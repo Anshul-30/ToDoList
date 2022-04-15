@@ -33,10 +33,10 @@ const dataInput = (state = initialState, action) => {
         case type.Delete_Data:
             const newList1 = [...state.list]
 
-            const index = state.list.findIndex((items) => {
+            const index = state.list.findIndex((items) => 
                 items.userId === action.userId
-                console.log("itemuserId", items.userId)
-            })
+                // console.log("itemuserId", items.userId)
+            )
             console.log("ID", action.userId)
             console.log("index", index)
             if (index >= 0) {

@@ -13,6 +13,13 @@ export default function Login({ navigation }) {
   const [nameShow, setNameShow] = useState(false)
   const [passShow, setPassShow] = useState(false)
   const [emailError, setEmailError] = useState(false)
+
+
+  // ------------Regex---------
+
+
+
+
   const emailRegex = /^[\w-\.\_\$]+@([\w]{3,5}\.)[\w]{2,4}$/;
   const strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%\^&\*])(?=.{8,})");
 
@@ -23,7 +30,7 @@ export default function Login({ navigation }) {
         setNameShow(false)
         if (strongRegex.test(pass)) {
           setPassShow(false)
-          dispatch(Login1())
+          dispatch(Login1(email ,pass))
 
         }
         else {

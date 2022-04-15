@@ -24,25 +24,35 @@ export const getData = async () => {
     }
 }
 
-export const setLogin = async(login) =>{
-try{
-const value = JSON.stringify(login)
-await AsyncStorage.setItem("login",value)
+export const setLogin = async (login) => {
+    try {
+        const value = JSON.stringify(login)
+        await AsyncStorage.setItem("login", value)
+        console.log("value",login)
+        return value
+    }
+    catch (e) {
+        console.log("error", e)
+    }
+}
 
-return value
-}
-catch(e){
-    console.log("error",e)
-}
+export const getLogin = async () => {
+    try {
+        const value = await AsyncStorage.getItem("login")
+        const jsonvalue = JSON.parse(value)
+        return jsonvalue
+    }
+    catch (e) {
+        console.log("error", e)
+    }
 }
 
-export const getLogin = async () =>{
-try{
-  const value = await AsyncStorage.getItem("login") 
-  const jsonvalue = JSON.parse(value)
-  return jsonvalue 
-}
-catch(e){
-console.log("error",e)
-}
+export const removelogin = async () => {
+    try {
+        await AsyncStorage.removeItem("login")
+    }
+    catch (e) {
+
+    }
+
 }

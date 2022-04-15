@@ -1,8 +1,9 @@
 import type from "../type"
 
-export const Login1 = () => {
+export const Login1 = (data) => {
     return {
-        type:type.LOGIN
+        type:type.LOGIN,
+        payload:data
     }
 }
 
