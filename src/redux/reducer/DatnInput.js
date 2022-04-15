@@ -23,34 +23,57 @@ const dataInput = (state = initialState, action) => {
                 list: mergeData
             }
         }
+        case type.Delete_Data:
+            const newList1 = [...state.list]
 
-        case type.Delete_Data: {
-            const newlist = state.list.filter((element) => element.id != action.id)
+            const index = state.list.findIndex((items) => {
+                items.userId === action.userId
+                console.log("itemuserId", items.userId)
+            })
+            console.log("ID", action.userId)
+            console.log("index", index)
+            if (index >= 0) {
+                newList1.splice(index, 1)
+            }
+            setData(newList1).then((val) => {
+                console.log("delete values", val)
+            })
             return {
+                ...state,
+                list: newList1
+            }
 
-                list: newlist
+        // case type.Delete_Data: {
+        //     const newlist = state.list.filter((element) => element.id != action.id)
+        //     return {
+
+        //         list: newlist
+        //     }
+        // }
+
+        case type.EDIT: {
+            console.log("Data", action.payload)
+
+            let data = action.payload
+            console.log("data", data)
+            console.log("id", data?.editid)
+            let editArr = [...state.list]
+            let index = state.list.findIndex((item) => item.userId === data.editid
+            )
+            console.log("index ", index)
+            editArr[index] = data
+            setData(editArr).then((value) => {
+                console.log("up[date arry", value)
+            })
+
+
+            return {
+                ...state,
+                list: editArr,
+
+
             }
         }
-
-        case type.EDIT:{
-                console.log("Data", action.payload)
-                let data = action.payload
-                console.log(data?.id?.id)
-                let updateArr = state.list.map((val, i) => {
-                    if (val?.id == data?.id?.id) {
-                        return data
-                    }
-                    return val
-                })
-                console.log("updated array", updateArr)
-
-                return {
-                    ...state,
-                    list: updateArr,
-
-
-                }
-            }
 
         default: return state
     }

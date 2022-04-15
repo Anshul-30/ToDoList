@@ -6,10 +6,10 @@ export const DataInput = (data) => {
         payload: data
     }
 }
-export const DeleteData = (id)=> {
+export const DeleteData = (userId)=> {
     return {
         type: type.Delete_Data,
-        id
+        userId
     }
 }
 export const UpdateData = (data) => {

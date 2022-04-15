@@ -23,3 +23,26 @@ export const getData = async () => {
         console.log(error);
     }
 }
+
+export const setLogin = async(login) =>{
+try{
+const value = JSON.stringify(login)
+await AsyncStorage.setItem("login",value)
+
+return value
+}
+catch(e){
+    console.log("error",e)
+}
+}
+
+export const getLogin = async () =>{
+try{
+  const value = await AsyncStorage.getItem("login") 
+  const jsonvalue = JSON.parse(value)
+  return jsonvalue 
+}
+catch(e){
+
+}
+}

@@ -13,7 +13,7 @@ const App = () => {
 
   useEffect(() => {
     getData().then((res) => {
-      console.log("GetItemValue", res);
+      console.log("res", res);
       if (!!res) {
         dispatch({
           type: type.User_Data,

@@ -19,9 +19,9 @@ export default function Home({ navigation }) {
 
 setData(list)
 
-  const Edit = (data, index) => {
-    console.log(data, "index", index)
-    navigation.navigate(navigationString.TASK, { props: data, index})
+  const Edit = (data) => {
+    // console.log(data, "index", index)
+    navigation.navigate(navigationString.TASK, { props: data})
   }
 
 
@@ -59,7 +59,7 @@ setData(list)
                   </View>
                   <View style={{ flexDirection: 'column', justifyContent: 'space-between' }}>
 
-                    <TouchableOpacity style={{ margin: 10 }} onPress={() => dispatch(DeleteData(element.id))}>
+                    <TouchableOpacity style={{ margin: 10 }} onPress={() => dispatch(DeleteData(element.userId))}>
                       <Image source={images.delete1} style={{ height: 35, width: 35 }} />
                     </TouchableOpacity>
 
