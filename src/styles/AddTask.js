@@ -1,5 +1,7 @@
 import React from "react";
 import {StyleSheet} from 'react-native'
+import colors from "./colors";
+import { moderateScaleVertical, textScale } from "./responsiveSize";
 const AddStyle = StyleSheet.create({
     textinput:{
         borderWidth:1,
@@ -13,18 +15,18 @@ const AddStyle = StyleSheet.create({
     },
     text:{
         color:'green',
-        fontSize:18,
-        fontWeight:'500',
+        fontSize:textScale(15),
+        // fontWeight:'500',
         textAlign:'center'
 
     },
     submit:{
         textAlign:'center',
-        color:'white',
-        fontSize:18
+        color:colors.white,
+        fontSize:textScale(17)
     },
     submitview:{
-        marginVertical:25,
+        marginVertical:moderateScaleVertical(20),
         backgroundColor:'green',
         alignSelf:'center',
         width:150,

@@ -2,11 +2,10 @@ import React from "react";
 import { StyleSheet } from 'react-native'
 import { moderateScale, textScale } from "./responsiveSize";
 import colors from "./colors";
-const HomeStyle = StyleSheet.create({
-    view: {
+import fontfamily from './fontfamily'
 
-        // height: "90%"
-    },
+const HomeStyle = StyleSheet.create({
+   
     img: {
         height: moderateScale(15),
         width: moderateScale(15)
@@ -26,7 +25,7 @@ const HomeStyle = StyleSheet.create({
     },
     text: {
         color:colors.blackB,
-        fontFamily:'Mulish-Bold.',
+        fontFamily:fontfamily.MulishBold,
         fontSize: textScale(16),
         // fontWeight: '600',
         // margin: 15
@@ -34,7 +33,7 @@ const HomeStyle = StyleSheet.create({
     logouttext: {
         color: 'tomato',
         fontSize: textScale(16),
-        fontWeight: '600',
+        // fontWeight: '600',
         // margin: 15
     },
     logout:{
@@ -45,7 +44,7 @@ const HomeStyle = StyleSheet.create({
     },
     text1:{
         padding:3,
-        color:'black',
+        color:colors.black,
         fontSize:textScale(14)
     }
 })

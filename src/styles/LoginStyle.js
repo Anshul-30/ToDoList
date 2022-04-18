@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet } from 'react-native'
 import { assets } from "../../react-native.config";
+import colors from "./colors";
 import fontfamily from "./fontfamily";
 import { moderateScale, moderateScaleVertical, textScale } from "./responsiveSize";
 
@@ -41,7 +42,7 @@ const LoginStyle = StyleSheet.create({
 
     } ,
     error:{
-        color:'red',
+        color:colors.redB,
         marginLeft:moderateScale(10),
         fontFamily:fontfamily.MulishBold
     }    
