@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet } from 'react-native'
+import { assets } from "../../react-native.config";
 import { moderateScale, moderateScaleVertical, textScale } from "./responsiveSize";
 
 const LoginStyle = StyleSheet.create({
@@ -15,9 +16,11 @@ const LoginStyle = StyleSheet.create({
     text:{
         color:'green',
         textAlign:'center',
-        fontWeight:'600',
+        fontFamily:'Mulish-Bold',
+        // fontFamily:'DancingScript-VariableFont_wght',
+        // fontWeight:'600',
         fontSize:textScale(20),
-        padding:moderateScaleVertical(7)
+        padding:moderateScaleVertical(20)
     },
     textInput: {
         borderRadius: 4,
@@ -37,7 +40,8 @@ const LoginStyle = StyleSheet.create({
     } ,
     error:{
         color:'red',
-        marginLeft:moderateScale(10)
+        marginLeft:moderateScale(10),
+        fontFamily:'Mulish-SemiBold'
     }    
 })
 export default LoginStyle

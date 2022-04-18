@@ -20,7 +20,7 @@ export default function Login({ navigation }) {
   // ------------Regex---------
 
 
-  const [isModalVisible, setIsModalVisible] = React.useState(false);
+  const [isModalVisible, setIsModalVisible] =useState(false);
 
   const handleModal = () => setIsModalVisible(() => !isModalVisible);
 
@@ -102,6 +102,13 @@ export default function Login({ navigation }) {
               <Text style={{ color: 'white' }}>Change Language</Text>
             </View>
           </TouchableOpacity>
+
+
+          {/* -----------------MODAL---------------------- */}
+
+
+
+
           <Modal isVisible={isModalVisible}>
             <View style={{ backgroundColor: 'white' }}>
               <TouchableOpacity onPress={() => onchnagelanguge('hn')}>
@@ -153,7 +160,7 @@ export default function Login({ navigation }) {
             </View>
           </Modal>
 
-
+{/* ---------------------MODAL END---------------------------- */}
         </View>
       </SafeAreaView>
     </>

@@ -26,8 +26,9 @@ const HomeStyle = StyleSheet.create({
     },
     text: {
         color:colors.blackB,
+        fontFamily:'Mulish-Bold.',
         fontSize: textScale(16),
-        fontWeight: '600',
+        // fontWeight: '600',
         // margin: 15
     },
     logouttext: {
