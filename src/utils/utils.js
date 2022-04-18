@@ -17,7 +17,7 @@ export const getData = async () => {
     try {
         const value = await AsyncStorage.getItem('myList')
         let jsonvalue = JSON.parse(value)
-        console.log("getItemLocallyConsole---------", jsonvalue);
+        console.log("get Item local", jsonvalue);
         return jsonvalue;
     }
     catch (error) {
@@ -55,6 +55,7 @@ export const removelogin = async () => {
         await AsyncStorage.removeItem("login")
     }
     catch (e) {
+        console.log("error", e)
 
     }
 

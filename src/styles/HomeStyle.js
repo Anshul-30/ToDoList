@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet } from 'react-native'
 import { moderateScale, textScale } from "./responsiveSize";
-
+import colors from "./colors";
 const HomeStyle = StyleSheet.create({
     view: {
 
@@ -25,7 +25,7 @@ const HomeStyle = StyleSheet.create({
         backgroundColor:'lightgreen'
     },
     text: {
-        color: 'black',
+        color:colors.blackB,
         fontSize: textScale(16),
         fontWeight: '600',
         // margin: 15

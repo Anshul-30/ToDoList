@@ -6,13 +6,15 @@ import {StatusBar} from 'react-native'
 import { SafeAreaView } from 'react-native';
 import { getData, getLogin } from './src/utils/utils';
 import type from './src/redux/type';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import string from './src/constatnts/lang';
 
 const {dispatch} = store;
 
 const App = () => {
 
   useEffect(() => {
-
+getlng()
     getLogin().then((res)=>{
       
       dispatch({
@@ -33,7 +35,16 @@ const App = () => {
     })
   }, [])
 
-
+const getlng = async()=>{
+  let lng= await AsyncStorage.getItem("language")
+  console.log("lng ----" , lng)
+  if(!!lng){
+    string.setLanguage(lng)
+  }
+  else{
+    string.setLanguage('en')
+  }
+}
   return (
     <>
     <StatusBar barStyle='dark-content' backgroundColor={'white'}/>

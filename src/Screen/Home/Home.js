@@ -9,6 +9,7 @@ import { DeleteData } from '../../redux/action/details'
 import dataInput from '../../redux/reducer/DatnInput'
 import { ScrollView } from 'react-native-gesture-handler'
 import { setData } from '../../utils/utils'
+import strings from '../../constatnts/lang'
 
 
 
@@ -30,13 +31,13 @@ export default function Home({ navigation }) {
 
     <View style={{ position: 'relative', flex: 1 }}>
       <View style={HomeStyle.logout}>
-        <Text style={HomeStyle.text}>Home</Text>
+        <Text style={HomeStyle.text}>{strings.HOME}</Text>
         <TouchableOpacity onPress={()=>navigation.navigate(navigationString.SETTING)}>
-          <Text style={HomeStyle.text}>Setting</Text>
+          <Text style={HomeStyle.text}>{strings.SETTINGS}</Text>
 
         </TouchableOpacity>
         <TouchableOpacity onPress={() => dispatch(Logout())}>
-          <Text style={HomeStyle.logouttext}>Logout</Text>
+          <Text style={HomeStyle.logouttext}>{strings.LOGOUT}</Text>
 
         </TouchableOpacity>
       </View>
@@ -50,15 +51,15 @@ export default function Home({ navigation }) {
                   margin: 7
                 }} key={index}>
                   <View style={{ margin: 10 }}>
-                    <Text style={HomeStyle.text1}>Name : {element.name}
+                    <Text style={HomeStyle.text1}>{strings.NAME}: {element.name}
                     </Text>
-                    <Text style={HomeStyle.text1}>Age : {element.age}
+                    <Text style={HomeStyle.text1}>{strings.AGE} : {element.age}
                     </Text>
-                    <Text style={HomeStyle.text1}>RollNo : {element.rollno}
+                    <Text style={HomeStyle.text1}>{strings.ROLLNO} : {element.rollno}
                     </Text>
-                    <Text style={HomeStyle.text1}>Phone Number : {element.phone}
+                    <Text style={HomeStyle.text1}>{strings.PHONE_NUMBER} : {element.phone}
                     </Text>
-                    <Text style={HomeStyle.text1}>Address : {element.address}
+                    <Text style={HomeStyle.text1}>{strings.ADDRESS} : {element.address}
                     </Text>
                   </View>
                   <View style={{ flexDirection: 'column', justifyContent: 'space-between' }}>

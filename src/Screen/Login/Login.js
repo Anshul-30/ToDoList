@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
-import { TextInput, SafeAreaView, TouchableOpacity, View, Text } from 'react-native'
+import { SafeAreaView, Text, TouchableOpacity, View, Button } from 'react-native'
+import RNRestart from 'react-native-restart'
 import { useDispatch } from 'react-redux'
+import TextInputComponent from '../../Components/TextInput'
+import strings, { changelanguage } from '../../constatnts/lang'
 import { Login1 } from '../../redux/action/auth'
 import LoginStyle from '../../styles/LoginStyle'
-import TextInputComponent from '../../Components/TextInput'
-import images from '../../constatnts/imagepath'
+import Modal from 'react-native-modal'
 
 export default function Login({ navigation }) {
   const dispatch = useDispatch()
@@ -18,14 +20,22 @@ export default function Login({ navigation }) {
   // ------------Regex---------
 
 
+  const [isModalVisible, setIsModalVisible] = React.useState(false);
 
+  const handleModal = () => setIsModalVisible(() => !isModalVisible);
 
   const emailRegex = /^[\w-\.\_\$]+@([\w]{3,5}\.)[\w]{2,4}$/;
   const strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%\^&\*])(?=.{8,})");
-const data1 =[{email ,pass}]
+  const data1 = { email, pass }
 
 
-// ----------------validations----------
+  const onchnagelanguge = (key) => {
+    changelanguage(key)
+    RNRestart.Restart()
+
+  }
+
+  // ----------------validations----------
 
 
   const click = () => {
@@ -56,36 +66,94 @@ const data1 =[{email ,pass}]
     <>
       <SafeAreaView>
         <View style={LoginStyle.view}>
-          <View > 
+          <View >
 
-          <Text style={LoginStyle.text}>LOGIN</Text>
-          <TextInputComponent
-            placeholder='Enter Email'
-            value={email}
-            onChangeText={(value) => setEmail(value)} />
+            <Text style={LoginStyle.text}>{strings.LOGIN}</Text>
+            <Text></Text>
+            <TextInputComponent
+              placeholder={strings.ENTER_EMAIL}
+              value={email}
+              onChangeText={(value) => setEmail(value)} />
 
-          {nameShow ? <Text style={LoginStyle.error}>Enter Valid email</Text> : null}
-          {emailError ? <Text style={LoginStyle.error}>Email can not be empty </Text> : null}
+            {nameShow ? <Text style={LoginStyle.error}>Enter Valid email</Text> : null}
+            {emailError ? <Text style={LoginStyle.error}>Email can not be empty </Text> : null}
 
-            </View>
-            <View>
+          </View>
+          <View>
 
-          <TextInputComponent
-            placeholder={'Enter Password'}
-            onChangeText={(value) => setPass(value)}
-            value={pass}
-            securetext={true}
+            <TextInputComponent
+              placeholder={strings.ENTER_PASSWORD}
+              onChangeText={(value) => setPass(value)}
+              value={pass}
+              securetext={true}
             />
 
 
-          {passShow ? <Text style={LoginStyle.error}>Enter Strong Password</Text> : null}
+            {passShow ? <Text style={LoginStyle.error}>Enter Strong Password</Text> : null}
 
-            </View>
+          </View>
           <TouchableOpacity onPress={click}>
             <View style={LoginStyle.btn}>
-              <Text style={{ color: 'white' }}>LOGIN</Text>
+              <Text style={{ color: 'white' }}>{strings.LOGIN}</Text>
             </View>
           </TouchableOpacity>
+          <TouchableOpacity onPress={handleModal}>
+            <View style={LoginStyle.btn}>
+              <Text style={{ color: 'white' }}>Change Language</Text>
+            </View>
+          </TouchableOpacity>
+          <Modal isVisible={isModalVisible}>
+            <View style={{ backgroundColor: 'white' }}>
+              <TouchableOpacity onPress={() => onchnagelanguge('hn')}>
+                <View style={LoginStyle.btn}>
+                  <Text style={{ color: 'white' }}>Italian</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => onchnagelanguge('en')}>
+                <View style={LoginStyle.btn}>
+                  <Text style={{ color: 'white' }}>English</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => onchnagelanguge('en')}>
+                <View style={LoginStyle.btn}>
+                  <Text style={{ color: 'white' }}>Hindi</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => onchnagelanguge('en')}>
+                <View style={LoginStyle.btn}>
+                  <Text style={{ color: 'white' }}>Urdu</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => onchnagelanguge('en')}>
+                <View style={LoginStyle.btn}>
+                  <Text style={{ color: 'white' }}>Tamil</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => onchnagelanguge('en')}>
+                <View style={LoginStyle.btn}>
+                  <Text style={{ color: 'white' }}>French</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => onchnagelanguge('en')}>
+                <View style={LoginStyle.btn}>
+                  <Text style={{ color: 'white' }}>Punajbi</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => onchnagelanguge('en')}>
+                <View style={LoginStyle.btn}>
+                  <Text style={{ color: 'white' }}>Spanish</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => onchnagelanguge('en')}>
+                <View style={LoginStyle.btn}>
+                  <Text style={{ color: 'white' }}>Japenese</Text>
+                </View>
+              </TouchableOpacity>
+              <Button title='hide' onPress={handleModal}/>
+            </View>
+          </Modal>
+
+
         </View>
       </SafeAreaView>
     </>

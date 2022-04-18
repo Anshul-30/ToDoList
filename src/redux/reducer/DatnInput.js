@@ -15,18 +15,19 @@ const initialState = {
 const dataInput = (state = initialState, action) => {
     switch (action.type) {
         case type.User_Data: {
-            console.log("payloadData in Submit form of Addtask", action.payload)
+            console.log("payloadData ", action.payload)
             const data = action.payload;
+            // console.log("state------", ...state)
 
             let mergeData = [
                 ...state.list,
                 ...data
             ]
-            setData(mergeData).then((val) => {
-                console.log("Data set Locally", val);
-            });
+            // console.log("statelist--------", ...state.list)
+            console.log("mergedata", mergeData)
+            setData(mergeData)
             return {
-                ...state,
+                // ...state,
                 list: mergeData
             }
         }
@@ -59,13 +60,11 @@ const dataInput = (state = initialState, action) => {
             console.log("data", data)
             console.log("id", data?.editid)
             let editArr = [...state.list]
-            let index = state.list.findIndex((item) => item.userId === data.editid
-            )
+            let index = state.list.findIndex((item) => item.userId === data.editid )
             console.log("index ", index)
             editArr[index] = data
-            setData(editArr).then((value) => {
-                console.log("up[date arry", value)
-            })
+
+            setData(editArr)
 
 
             return {

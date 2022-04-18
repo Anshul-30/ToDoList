@@ -9,6 +9,7 @@ import LoginStyle from '../../styles/LoginStyle';
 import { useDispatch } from 'react-redux';
 import { DataInput, UpdateData } from '../../redux/action/details';
 import { setData } from '../../utils/utils';
+import strings from '../../constatnts/lang';
 
 
 export default function AddTask({ navigation, route }) {
@@ -113,9 +114,9 @@ export default function AddTask({ navigation, route }) {
   return (
     <SafeAreaView>
       <View style={AddStyle.view}>
-        <Text style={AddStyle.text}>Fill details</Text>
+        <Text style={AddStyle.text}>{strings.FILL_DETAILS}</Text>
         <TextInputComponent
-          placeholder='Enter Name'
+          placeholder={strings.ENTER_NAME}
           value={name}
           onChangeText={(value) => setName(value)} />
 
@@ -123,7 +124,7 @@ export default function AddTask({ navigation, route }) {
           nameError ? <Text style={LoginStyle.error}>Enter Name</Text> : null
         }
         <TextInputComponent
-          placeholder='Enter Age'
+          placeholder={strings.ENTER_AGE}
           value={age}
           keyboardType={"numeric"}
 
@@ -133,7 +134,7 @@ export default function AddTask({ navigation, route }) {
           ageError ? <Text style={LoginStyle.error}>Enter Age</Text> : null
         }
         <TextInputComponent
-          placeholder='Enter RollNo'
+          placeholder={strings.ENTER_ROLLNO}
           keyboardType={"numeric"}
 
           onChangeText={(value) => setRollno(value)}
@@ -144,7 +145,7 @@ export default function AddTask({ navigation, route }) {
           rollnoError ? <Text style={LoginStyle.error}>Enter Rollno </Text> : null
         }
         <TextInputComponent
-          placeholder='Enter Phone Number'
+          placeholder={strings.ENTER_PHONE_NUMBER}
           onChangeText={(value) => setPhoneNumber(value)}
           value={phone}
           keyboardType={"numeric"}
@@ -156,7 +157,7 @@ export default function AddTask({ navigation, route }) {
           </Text> : null
         }
         <TextInputComponent
-          placeholder='Enter Address'
+          placeholder={strings.ENTER_ADDRESS}
           onChangeText={(value) => setAddress(value)}
           value={address}
         />
@@ -166,7 +167,7 @@ export default function AddTask({ navigation, route }) {
         }
         <TouchableOpacity activeOpacity={0.8} onPress={id ? edit : submit}>
           <View style={AddStyle.submitview}>
-            <Text style={AddStyle.submit}> {id ? "Edit" : "submit"}</Text>
+            <Text style={AddStyle.submit}> {id ? strings.EDIT : strings.SUBMIT}</Text>
           </View>
         </TouchableOpacity>
 
