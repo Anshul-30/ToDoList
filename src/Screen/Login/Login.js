@@ -75,8 +75,8 @@ export default function Login({ navigation }) {
               value={email}
               onChangeText={(value) => setEmail(value)} />
 
-            {nameShow ? <Text style={LoginStyle.error}>Enter Valid email</Text> : null}
-            {emailError ? <Text style={LoginStyle.error}>Email can not be empty </Text> : null}
+            {nameShow ? <Text style={LoginStyle.error}>{strings.ENTER_VALID_EMAIL}</Text> : null}
+            {emailError ? <Text style={LoginStyle.error}>{strings.EMAIL_CANT_BE_EMPTY} </Text> : null}
 
           </View>
           <View>
@@ -89,7 +89,7 @@ export default function Login({ navigation }) {
             />
 
 
-            {passShow ? <Text style={LoginStyle.error}>Enter Strong Password</Text> : null}
+            {passShow ? <Text style={LoginStyle.error}>{strings.ENTER_STRONG_PASSWORD}</Text> : null}
 
           </View>
           <TouchableOpacity onPress={click}>

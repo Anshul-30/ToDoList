@@ -17,5 +17,8 @@ export default{
     ROLLNO:"rotolo n",
     FILL_DETAILS:"riempire i dettagli",
     ADDRESS:"Indirizzo",
-    PHONE_NUMBER:"numero di telefono"
+    PHONE_NUMBER:"numero di telefono",
+    ENTER_STRONG_PASSWORD:"inserire una password complessa",
+    ENTER_VALID_EMAIL:"Inserisci un indirizzo e-mail valido",
+    EMAIL_CANT_BE_EMPTY:"l'e-mail non può essere vuota"
 }

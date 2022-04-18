@@ -16,5 +16,8 @@ export default {
     AGE:"Age",
     ROLLNO:"Rollno",
     PHONE_NUMBER:"Phone Number",
-    ADDRESS:"Address"
+    ADDRESS:"Address",
+    ENTER_STRONG_PASSWORD:'Enter Strong Password',
+    ENTER_VALID_EMAIL:"Enter Valid Email",
+    EMAIL_CANT_BE_EMPTY:"Email can not be empty"
 }

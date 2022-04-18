@@ -1,15 +1,13 @@
 import React from 'react'
-import { Text, SafeAreaView, View, Image, TouchableOpacity } from 'react-native'
-import images from '../../constatnts/imagepath'
-import HomeStyle from '../../styles/HomeStyle'
-import navigationString from '../../navigation/navigationString'
+import { Image, Text, TouchableOpacity, View } from 'react-native'
+import { ScrollView } from 'react-native-gesture-handler'
 import { useDispatch, useSelector } from 'react-redux'
+import images from '../../constatnts/imagepath'
+import strings from '../../constatnts/lang'
+import navigationString from '../../navigation/navigationString'
 import { Logout } from '../../redux/action/auth'
 import { DeleteData } from '../../redux/action/details'
-import dataInput from '../../redux/reducer/DatnInput'
-import { ScrollView } from 'react-native-gesture-handler'
-import { setData } from '../../utils/utils'
-import strings from '../../constatnts/lang'
+import HomeStyle from '../../styles/HomeStyle'
 
 
 

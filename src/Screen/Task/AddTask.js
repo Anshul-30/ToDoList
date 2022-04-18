@@ -121,7 +121,7 @@ export default function AddTask({ navigation, route }) {
           onChangeText={(value) => setName(value)} />
 
         {
-          nameError ? <Text style={LoginStyle.error}>Enter Name</Text> : null
+          nameError ? <Text style={LoginStyle.error}>{strings.ENTER_NAME}</Text> : null
         }
         <TextInputComponent
           placeholder={strings.ENTER_AGE}
@@ -131,7 +131,7 @@ export default function AddTask({ navigation, route }) {
           onChangeText={(value) => setAge(value)} />
 
         {
-          ageError ? <Text style={LoginStyle.error}>Enter Age</Text> : null
+          ageError ? <Text style={LoginStyle.error}>{strings.ENTER_AGE}</Text> : null
         }
         <TextInputComponent
           placeholder={strings.ENTER_ROLLNO}
@@ -142,7 +142,7 @@ export default function AddTask({ navigation, route }) {
         />
 
         {
-          rollnoError ? <Text style={LoginStyle.error}>Enter Rollno </Text> : null
+          rollnoError ? <Text style={LoginStyle.error}>{strings.ENTER_ROLLNO} </Text> : null
         }
         <TextInputComponent
           placeholder={strings.ENTER_PHONE_NUMBER}
@@ -153,7 +153,7 @@ export default function AddTask({ navigation, route }) {
         />
 
         {
-          phoneError ? <Text style={LoginStyle.error}>Enter Phone NUmber
+          phoneError ? <Text style={LoginStyle.error}>{strings.ENTER_PHONE_NUMBER}
           </Text> : null
         }
         <TextInputComponent
@@ -163,7 +163,7 @@ export default function AddTask({ navigation, route }) {
         />
 
         {
-          addressError ? <Text style={LoginStyle.error}>Enter Address</Text> : null
+          addressError ? <Text style={LoginStyle.error}>{strings.ENTER_ADDRESS}</Text> : null
         }
         <TouchableOpacity activeOpacity={0.8} onPress={id ? edit : submit}>
           <View style={AddStyle.submitview}>

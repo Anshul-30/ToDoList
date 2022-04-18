@@ -1,7 +1,9 @@
 import React from "react";
 import { StyleSheet } from 'react-native'
 import { assets } from "../../react-native.config";
+import fontfamily from "./fontfamily";
 import { moderateScale, moderateScaleVertical, textScale } from "./responsiveSize";
+
 
 const LoginStyle = StyleSheet.create({
     view: {
@@ -16,7 +18,7 @@ const LoginStyle = StyleSheet.create({
     text:{
         color:'green',
         textAlign:'center',
-        fontFamily:'Mulish-Bold',
+        fontFamily:fontfamily.MulishBold,
         // fontFamily:'DancingScript-VariableFont_wght',
         // fontWeight:'600',
         fontSize:textScale(20),
@@ -41,7 +43,7 @@ const LoginStyle = StyleSheet.create({
     error:{
         color:'red',
         marginLeft:moderateScale(10),
-        fontFamily:'Mulish-SemiBold'
+        fontFamily:fontfamily.MulishBold
     }    
 })
 export default LoginStyle
