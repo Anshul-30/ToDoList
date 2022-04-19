@@ -10,7 +10,7 @@ const userState = (state = initialState, action) => {
         case type.LOGIN:
             {
                 const data = action.payload
-                console.log("data", data)
+                console.log("data--------", data)
                 setLogin(data)
                 return {
                     userdata: data

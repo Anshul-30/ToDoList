@@ -11,7 +11,7 @@ const LoginStyle = StyleSheet.create({
         // flex:1,
         justifyContent:'center',
         // alignContent:'center'
-        marginTop:moderateScaleVertical(200),
+        marginTop:moderateScaleVertical(178),
         // height:'85%',
         
         

@@ -10,14 +10,22 @@ export default function Setting() {
 
 const userStatus = useSelector(state => state.userState.userdata);
 // console.log(userStatus[0].email)
-const email = userStatus?.email
+
+const email = userStatus?.user?.email
+const loginemail = userStatus?.email
 const pass = userStatus?.pass
+
+
   return (<>
     <Text>
         settings
     </Text>
+    
 <Text>{email}</Text>
+<Text>{loginemail}</Text>
 <Text>{pass}</Text>
+
+
     {/* {userStatus.map((item)=>{
       return(
         <Text>Email:-{item.email}</Text> 
