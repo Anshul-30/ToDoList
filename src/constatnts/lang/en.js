@@ -15,6 +15,7 @@ export default {
     NAME:"Name",
     AGE:"Age",
     ROLLNO:"Rollno",
+    FILL_DETAILS:"fill detail",
     PHONE_NUMBER:"Phone Number",
     ADDRESS:"Address",
     ENTER_STRONG_PASSWORD:'Enter Strong Password',

@@ -27,7 +27,9 @@ export default function Login({ navigation }) {
       await GoogleSignin.hasPlayServices();
       const userInfo = await GoogleSignin.signIn();
       console.log("user info", userInfo)
-      dispatch(Login1(userInfo))
+      const data = userInfo?.user
+      console.log("data",data)
+      dispatch(Login1(data))
      
     } 
     catch (error) {
@@ -76,7 +78,9 @@ export default function Login({ navigation }) {
     }
     else {
       const userData = result
-      console.log(userData)
+      console.log("id",userData)
+      dispatch(Login1(userData))
+
     }
   }
   const onFBlogIn = async () => {
@@ -84,7 +88,7 @@ export default function Login({ navigation }) {
       await fbLogIn(_resInfoCallback)
       console.log("hii")
     } catch (error) {
-      console.log("drcfgvbhjnk", error)
+      console.log("error", error)
     }
   }
   const [isModalVisible, setIsModalVisible] = useState(false);
