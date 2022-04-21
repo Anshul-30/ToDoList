@@ -31,7 +31,7 @@ export const setLogin = async (login) => {
     try {
         const value = JSON.stringify(login)
         await AsyncStorage.setItem("login", value)
-        console.log("value",login)
+        // console.log("value",login)
         return value
     }
     catch (e) {

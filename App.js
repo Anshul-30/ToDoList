@@ -15,7 +15,8 @@ const { dispatch } = store;
 const App = () => {
   useEffect(() => {
     requestUserPermission()
-    notificationListener()
+    // notificationListener()
+    
     getlng()
     getLogin().then((res) => {
 
@@ -43,6 +44,7 @@ const App = () => {
     console.log("lng ----", lng)
     if (!!lng) {
       string.setLanguage(lng)
+      
     }
     else {
       string.setLanguage('en')
